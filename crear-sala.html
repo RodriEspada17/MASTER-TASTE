@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Sala - BBO Mastertaste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #051307; color: white; font-family: sans-serif; }
+        .btn-green { background-color: #166534; border: 1px solid #22c55e; transition: 0.3s; }
+        .btn-green:hover { background-color: #15803d; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col p-4">
+
+    <!-- Barra Superior -->
+    <header class="flex items-center mb-8 border-b border-green-800 pb-4 mt-4">
+        <button onclick="window.location.href='index.html'" class="text-green-500 mr-4 font-bold text-xl">←</button>
+        <h1 class="text-green-500 font-bold uppercase tracking-wide">NUEVA SALA DE DEGUSTACIÓN</h1>
+    </header>
+
+    <div class="max-w-2xl mx-auto w-full space-y-6">
+        
+        <!-- Tipo de Degustación -->
+        <div>
+            <label class="text-xs text-gray-400 mb-2 block uppercase tracking-wider">Tipo de Degustación</label>
+            <div class="grid grid-cols-2 gap-2">
+                <button class="border border-green-700 bg-green-600 text-black font-bold p-3 rounded-md">Producto Terminado</button>
+                <button class="border border-green-700 p-3 rounded-md text-gray-300">Producto Intermedio</button>
+            </div>
+        </div>
+
+        <!-- Marca -->
+        <div>
+            <label class="text-xs text-gray-400 mb-2 block uppercase tracking-wider mt-6">Marca</label>
+            <div class="grid grid-cols-3 gap-2">
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Amstel</button>
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Schneider</button>
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Capital</button>
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Real</button>
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Cordillera</button>
+                <button class="border border-green-800 p-2 rounded text-sm text-gray-300 hover:border-green-500 hover:text-green-400">Malta Real</button>
+            </div>
+        </div>
+
+        <!-- Código de Producto -->
+        <div>
+            <label class="text-xs text-gray-400 mb-2 block uppercase tracking-wider mt-6">Código de Producto</label>
+            <input type="text" id="codigoProducto" placeholder="Ej: PT-2024-001" 
+                   class="w-full bg-black border border-green-800 rounded p-3 text-white focus:outline-none focus:border-green-500">
+        </div>
+
+        <!-- Botón Crear Sala -->
+        <button id="btnCrearSala" class="btn-green w-full p-4 rounded-lg font-bold text-lg mt-8 flex justify-center items-center">
+            CREAR SALA Y COMENZAR <span class="ml-2">›</span>
+        </button>
+
+    </div>
+</body>
+</html>
