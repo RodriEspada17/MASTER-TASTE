@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación - BBO Mastertaste</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #051307; color: white; font-family: sans-serif; }
+        .btn-green { background-color: #166534; border: 1px solid #22c55e; transition: 0.3s; }
+        .btn-green:hover { background-color: #15803d; }
+        .defecto-btn.active, .intensidad-btn.active { background-color: #22c55e; color: black; font-weight: bold; border-color: #22c55e; }
+        .bg-panel { background-color: #0a1f0d; border: 1px solid #166534; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col pb-20">
+
+    <!-- Barra Superior -->
+    <header class="flex justify-between items-center bg-green-900 p-4 border-b border-green-700">
+        <div class="flex items-center">
+            <button onclick="window.location.href='index.html'" class="text-green-400 mr-3 font-bold text-lg">←</button>
+            <div>
+                <p class="text-xs text-green-400 uppercase">EVALUACIÓN ACTIVA</p>
+                <h1 id="tituloMarca" class="font-bold uppercase tracking-wide">MARCA - CÓDIGO</h1>
+            </div>
+        </div>
+        <div class="bg-green-800 px-3 py-1 rounded text-sm font-bold tracking-widest text-green-300" id="displayCodigo">
+            ------
+        </div>
+    </header>
+
+    <div class="max-w-2xl mx-auto w-full p-4 space-y-6 mt-4">
+        
+        <!-- Lista de Deméritos Agregados (Se llena con JS) -->
+        <div id="listaDemeritos" class="space-y-2 hidden">
+            <h2 class="text-xs text-gray-400 uppercase tracking-wider mb-3">Deméritos Registrados</h2>
+            <!-- Aquí aparecerán los defectos agregados -->
+        </div>
+
+        <!-- Panel de Registro -->
+        <div class="bg-panel p-4 rounded-lg">
+            <h2 class="text-green-500 font-bold mb-4 flex items-center">+ REGISTRAR DEMÉRITO</h2>
+            
+            <!-- Defectos -->
+            <label class="text-xs text-gray-400 mb-2 block uppercase tracking-wider">Defecto Detectado</label>
+            <div class="grid grid-cols-2 gap-2 mb-6 h-48 overflow-y-auto pr-2" id="contenedorDefectos">
+                <!-- Se llenan con JS para no hacer el HTML gigante -->
+            </div>
+
+            <!-- Intensidad -->
+            <label class="text-xs text-gray-400 mb-2 block uppercase tracking-wider">Intensidad</label>
+            <div class="grid grid-cols-3 gap-2 mb-6" id="contenedorIntensidad">
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="0">0 - Ausente</button>
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="1">1 - Umbral</button>
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="2">2 - Bajo</button>
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="3">3 - Medio</button>
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="4">4 - Alto</button>
+                <button class="intensidad-btn border border-green-800 p-2 rounded text-sm text-gray-300" data-val="5">5 - Extremo</button>
+            </div>
+
+            <button id="btnAgregarDemerito" class="btn-green w-full p-3 rounded font-bold">
+                AGREGAR DEMÉRITO
+            </button>
+        </div>
+
+        <!-- Botón Finalizar -->
+        <button id="btnFinalizar" class="w-full bg-green-950 border border-green-700 text-green-400 hover:bg-green-900 p-4 rounded-lg font-bold flex justify-center items-center mt-6 transition-colors">
+            ⚗️ FINALIZAR Y ANALIZAR CON IA
+        </button>
+        <p class="text-center text-xs text-gray-500 mt-2">El sistema evaluará los deméritos según estándares BJCP</p>
+
+    </div>
+
+    <!-- Vinculamos la lógica JS -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>
